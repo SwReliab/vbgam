@@ -1,0 +1,14 @@
+Package: vbsrm
+Type: Package
+Title: Variational Bayes for Software Reliability Models
+Version: 0.1.0
+Date: 2018-5-28
+Author: Hiroyuki OKAMURA
+Maintainer: Hiroyuki OKAMURA <okamu@hiroshima-u.ac.jp>
+Description: This package provides estimation programs for software
+  reliability growth models with variational Bayes.
+LinkingTo: Rcpp
+Imports: R6, Rcpp, stats, Matrix, ggplot2, Rsrat
+Remotes: okamumu/Rsrat
+License: MIT + file LICENSE
+RoxygenNote: 6.0.1
