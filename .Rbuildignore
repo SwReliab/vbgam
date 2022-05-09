@@ -7,3 +7,6 @@
 ^cran-comments\.md$
 ^\.travis\.yml$
 ^build\.xml$
+^vbsrm\.Rcheck$
+^vbsrm.*\.tar\.gz$
+^vbsrm.*\.tgz$

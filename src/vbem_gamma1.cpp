@@ -7,6 +7,9 @@ double dgamma_log(double t0, double t1, double alpha, double rate) {
   return alpha * log(rate) + (alpha-1) * t0 - rate * t1 - lgamma(alpha);
 }
 
+// @name vbem
+// [[Rcpp::export]]
+
 List vb1fit(double alpha, List params, List prior, List data, List options) {
 
   const int maxiter = options["maxiter"];

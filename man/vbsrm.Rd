@@ -3,7 +3,6 @@
 \docType{package}
 \name{vbsrm}
 \alias{vbsrm}
-\alias{vbsrm-package}
 \title{vbsrm: Variational Bayes for Software Reliability Models}
 \description{
 This package provides estimation programs for software

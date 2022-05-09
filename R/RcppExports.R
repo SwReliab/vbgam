@@ -5,10 +5,6 @@ vb1fit <- function(alpha, params, prior, data, options) {
     .Call('_vbsrm_vb1fit', PACKAGE = 'vbsrm', alpha, params, prior, data, options)
 }
 
-vbem_vb2gam <- function(n, alpha, init_zetaT, prior, data, options) {
-    .Call('_vbsrm_vbem_vb2gam', PACKAGE = 'vbsrm', n, alpha, init_zetaT, prior, data, options)
-}
-
 vb2fit <- function(alpha, prior, data, options) {
     .Call('_vbsrm_vb2fit', PACKAGE = 'vbsrm', alpha, prior, data, options)
 }

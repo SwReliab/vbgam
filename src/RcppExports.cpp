@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // vb1fit
 List vb1fit(double alpha, List params, List prior, List data, List options);
 RcppExport SEXP _vbsrm_vb1fit(SEXP alphaSEXP, SEXP paramsSEXP, SEXP priorSEXP, SEXP dataSEXP, SEXP optionsSEXP) {
@@ -17,22 +22,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type data(dataSEXP);
     Rcpp::traits::input_parameter< List >::type options(optionsSEXP);
     rcpp_result_gen = Rcpp::wrap(vb1fit(alpha, params, prior, data, options));
-    return rcpp_result_gen;
-END_RCPP
-}
-// vbem_vb2gam
-List vbem_vb2gam(int n, double alpha, double init_zetaT, List prior, List data, List options);
-RcppExport SEXP _vbsrm_vbem_vb2gam(SEXP nSEXP, SEXP alphaSEXP, SEXP init_zetaTSEXP, SEXP priorSEXP, SEXP dataSEXP, SEXP optionsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
-    Rcpp::traits::input_parameter< double >::type init_zetaT(init_zetaTSEXP);
-    Rcpp::traits::input_parameter< List >::type prior(priorSEXP);
-    Rcpp::traits::input_parameter< List >::type data(dataSEXP);
-    Rcpp::traits::input_parameter< List >::type options(optionsSEXP);
-    rcpp_result_gen = Rcpp::wrap(vbem_vb2gam(n, alpha, init_zetaT, prior, data, options));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -53,7 +42,6 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_vbsrm_vb1fit", (DL_FUNC) &_vbsrm_vb1fit, 5},
-    {"_vbsrm_vbem_vb2gam", (DL_FUNC) &_vbsrm_vbem_vb2gam, 6},
     {"_vbsrm_vb2fit", (DL_FUNC) &_vbsrm_vb2fit, 4},
     {NULL, NULL, 0}
 };

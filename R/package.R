@@ -5,8 +5,7 @@
 #'
 #' @docType package
 #' @name vbsrm
-#' @import R6 ggplot2
-#' @import Rsrat
+#' @import R6 ggplot2 Rsrat
 #' @importFrom Rcpp sourceCpp
 #' @useDynLib vbsrm
 NULL

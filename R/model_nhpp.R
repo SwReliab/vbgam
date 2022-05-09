@@ -1,7 +1,6 @@
 #' Class for NHPP-based software reliability model
 #'
 #' @docType class
-#' @name NHPP
 #' @return Object of \code{\link{R6Class}} with methods for NHPP-based software reliability model.
 #' @format \code{\link{R6Class}} object.
 #' @field name A character string for the name of model.
